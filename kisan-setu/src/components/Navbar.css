@@ -1,0 +1,190 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: rgba(255, 253, 247, 0.86);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cream-300);
+}
+
+.navbar__inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.navbar__logo {
+  width: 36px;
+  height: 36px;
+  color: var(--gold-600);
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.navbar__name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--grain-800);
+  letter-spacing: -0.01em;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border-radius: var(--r-full);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink-500);
+  transition: background 0.2s, color 0.2s;
+}
+
+.navbar__link:hover { background: var(--grain-100); color: var(--grain-700); }
+.navbar__link.active { background: var(--grain-800); color: var(--white); }
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.navbar__bell {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--cream-300);
+  background: var(--white);
+  color: var(--grain-700);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.navbar__bell:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.navbar__bell-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: var(--r-full);
+  background: linear-gradient(135deg, var(--clay-500), #C04A2C);
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  animation: pulse-ring 2s infinite;
+}
+
+.navbar__lang { position: relative; }
+
+.navbar__lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--cream-300);
+  background: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink-600);
+  transition: border-color 0.2s;
+}
+
+.navbar__lang-btn:hover { border-color: var(--grain-500); }
+
+.navbar__lang-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--cream-300);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  padding: 6px;
+  min-width: 140px;
+  display: grid;
+  gap: 2px;
+  animation: pageIn 0.2s ease-out both;
+}
+
+.navbar__lang-item {
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink-600);
+}
+
+.navbar__lang-item:hover { background: var(--grain-100); }
+.navbar__lang-item.active { background: var(--grain-800); color: var(--white); }
+
+.navbar__hamburger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--cream-300);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--grain-800);
+  place-items: center;
+}
+
+.navbar__mobile {
+  display: none;
+  padding: 8px 16px 20px;
+  background: var(--cream-50);
+  border-bottom: 1px solid var(--cream-300);
+}
+
+.navbar__mobile.open { display: grid; gap: 4px; }
+
+.navbar__mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink-600);
+}
+
+.navbar__mobile-link:hover { background: var(--grain-100); }
+.navbar__mobile-link.active { background: var(--grain-800); color: var(--white); }
+
+@media (max-width: 980px) {
+  .navbar__links,
+  .navbar__auth { display: none; }
+  .navbar__hamburger { display: grid; }
+}
+
+@media (max-width: 520px) {
+  .navbar__name { font-size: 19px; }
+  .navbar__bell { display: none; }
+}

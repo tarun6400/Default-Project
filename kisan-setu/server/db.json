@@ -1,0 +1,153 @@
+{
+  "booking": {
+    "id": "b1",
+    "farmerId": "f1",
+    "centerId": "c1",
+    "centerName": "Guntur Market Yard",
+    "crop": "Paddy",
+    "qtyTonnes": 3.1,
+    "slotTime": "09:00 – 10:00",
+    "date": "Today",
+    "token": "GNT-3412",
+    "status": "rejected",
+    "qualityGrade": null,
+    "amount": null
+  },
+  "notifications": [
+    {
+      "id": "n-1789306734591",
+      "type": "info",
+      "title": "Quality rejected",
+      "titleHi": "गुणवत्ता अस्वीकृत",
+      "titleTe": "నాణ్యత తిరస్కరించబడింది",
+      "message": "Your Paddy lot GNT-1102 was not accepted. Reason: Moisture above 17% limit. Please re-deliver after preparation.",
+      "messageHi": "आपकी धान लॉट GNT-1102 स्वीकार नहीं की गई। कारण: Moisture above 17% limit। कृपया तैयारी के बाद दोबारा लाएं।",
+      "messageTe": "మీ వరి లాట్ GNT-1102 ఆమోదించబడలేదు. కారణం: Moisture above 17% limit. దయచేసి సిద్ధమైన తర్వాత మళ్ళీ రండి.",
+      "time": "Just now",
+      "read": false
+    },
+    {
+      "id": "n1",
+      "type": "information",
+      "title": "Arrived at mandi",
+      "titleHi": "मंडी पहुंचे",
+      "titleTe": "మార్కెట్ చేరుకున్నారు",
+      "message": "Your vehicle is at gate #2. Queue position #12, estimated wait 20 min.",
+      "messageHi": "आपका वाहन गेट #2 पर है। कतार स्थिति #12, लगभग 20 मिनट।",
+      "messageTe": "మీ వాహనం గేట్ #2 వద్ద ఉంది. క్యూ స్థానం #12, సుమారు 20 నిమిషాలు.",
+      "time": "8:51 AM",
+      "read": false
+    },
+    {
+      "id": "n2",
+      "type": "slot",
+      "title": "Slot confirmed",
+      "titleHi": "स्लॉट की पुष्टि हुई",
+      "titleTe": "స్లాట్ నిర్ధారణ అయింది",
+      "message": "Your delivery slot 09:00–10:00 at Guntur Market Yard is confirmed. Token GNT-3412.",
+      "messageHi": "गुंटूर मंडी पर आपका 09:00–10:00 डिलीवरी स्लॉट पक्का है। टोकन GNT-3412।",
+      "messageTe": "గుంటూరు మార్కెట్ యార్డులో మీ 09:00–10:00 డెలివరీ స్లాట్ నిర్ధారణ అయింది. టోకెన్ GNT-3412.",
+      "time": "6:42 AM",
+      "read": false
+    }
+  ],
+  "smsLog": [
+    {
+      "id": "sms-1789306734592",
+      "text": "Kisan Setu: Your Paddy lot GNT-1102 was rejected (Moisture above 17% limit). Please re-deliver.",
+      "time": "2026-09-13T13:38:54.592Z"
+    },
+    {
+      "id": "sms0",
+      "text": "Kisan Setu: Your queue position is #12 at Guntur Market Yard. Estimated wait 20 min.",
+      "time": "8:51 AM"
+    },
+    {
+      "id": "sms1",
+      "text": "Kisan Setu: Slot confirmed 09:00–10:00 at Guntur Market Yard. Token GNT-3412.",
+      "time": "6:42 AM"
+    }
+  ],
+  "queue": [
+    {
+      "id": "q1",
+      "name": "Venkat Rao",
+      "nameHi": "वेंकट राव",
+      "nameTe": "వెంకట్ రావు",
+      "crop": "Paddy",
+      "cropHi": "धान",
+      "cropTe": "వరి",
+      "qty": 3.1,
+      "pos": 1,
+      "state": "inspection",
+      "lot": "GNT-1102",
+      "centerId": "c1",
+      "rejected": true,
+      "rejectReason": "Moisture above 17% limit"
+    },
+    {
+      "id": "q2",
+      "name": "Lakshmi Devi",
+      "nameHi": "लक्ष्मी देवी",
+      "nameTe": "లక్ష్మీ దేవి",
+      "crop": "Cotton",
+      "cropHi": "कपास",
+      "cropTe": "పత్తి",
+      "qty": 4.6,
+      "pos": 2,
+      "state": "arrived",
+      "lot": "GNT-1103",
+      "centerId": "c1"
+    },
+    {
+      "id": "q3",
+      "name": "Srinivas Reddy",
+      "nameHi": "श्रीनिवास रेड्डी",
+      "nameTe": "శ్రీనివాస్ రెడ్డి",
+      "crop": "Paddy",
+      "cropHi": "धान",
+      "cropTe": "వరి",
+      "qty": 2.2,
+      "pos": 3,
+      "state": "arrived",
+      "lot": "GNT-1105",
+      "centerId": "c1"
+    },
+    {
+      "id": "q4",
+      "name": "Nagaraju",
+      "nameHi": "नागराजू",
+      "nameTe": "నాగరాజు",
+      "crop": "Groundnut",
+      "cropHi": "मूंगफली",
+      "cropTe": "వేరుశనగ",
+      "qty": 1.8,
+      "pos": 4,
+      "state": "scheduled",
+      "lot": "GNT-1108",
+      "centerId": "c1"
+    },
+    {
+      "id": "q5",
+      "name": "Padmavathi",
+      "nameHi": "पद्मावती",
+      "nameTe": "పద్మావతి",
+      "crop": "Maize",
+      "cropHi": "मक्का",
+      "cropTe": "మొక్కజొన్న",
+      "qty": 5,
+      "pos": 5,
+      "state": "scheduled",
+      "lot": "GNT-1110",
+      "centerId": "c1"
+    }
+  ],
+  "mspRates": {
+    "Paddy": 2300,
+    "Cotton": 7020,
+    "Groundnut": 6783,
+    "Tur": 7550,
+    "Maize": 2225,
+    "Bengal Gram": 5650
+  }
+}

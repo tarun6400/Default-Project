@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.log
+serve.log
+.env
+.env.local
+config.local.js
+supabase/.branches/
+supabase/.temp/

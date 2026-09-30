@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FarmDirect — SIH26033 | Direct Farmer to Consumer Marketplace</title>
+<meta name="description" content="FarmDirect removes intermediaries from the agricultural supply chain, connecting farmers and FPOs directly with consumers and bulk buyers. Includes demand prediction and intelligent logistics." />
+<meta name="theme-color" content="#0f5132" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127807;</text></svg>" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a href="#top" class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3c5 4 8 8 8 13a8 8 0 0 1-16 0c0-5 3-9 8-13Z" fill="currentColor" opacity=".22"/><path d="M16 6v20M16 12c-2-1-4-1-6 0M16 17c2-1 4-1 6 0M16 9c1.5-1 3-1.5 4.5-1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      </span>
+      <span class="brand__text">Farm<b>Direct</b></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Main navigation">
+      <a href="#problem">The Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#how">How It Works</a>
+      <a href="#market">Marketplace</a>
+      <a href="#forecast">Demand Forecast</a>
+      <a href="#features">Technology</a>
+      <a href="#impact">Impact</a>
+
+      <div class="session-chip" id="sessionChip" hidden>
+        <span class="session-chip__avatar" id="chipAvatar">?</span>
+        <span class="session-chip__meta">
+          <b id="chipName">Signed in</b>
+          <small id="chipRole">buyer</small>
+        </span>
+        <button class="session-chip__out" id="chipSignOut" type="button" title="Sign out">&times;</button>
+      </div>
+
+      <a href="#" class="btn btn--sm btn--primary" id="navAuth">Sign in</a>
+    </nav>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ PROBLEM STRIP ============ -->
+<div class="problemtag">
+  <div class="container">
+    <span class="problemtag__id">SIH26033</span>
+    <span class="problemtag__text">Ministry of Consumer Affairs, Food &amp; Public Distribution &nbsp;·&nbsp; Theme: Agriculture, FoodTech &amp; Rural Development</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__glow hero__glow--a"></div>
+  <div class="hero__glow hero__glow--b"></div>
+
+  <div class="container hero__grid">
+    <div class="hero__content">
+      <span class="pill">
+        <span class="pill__dot"></span>
+        Zero-intermediary trade network
+      </span>
+
+      <h1 className="hero__title">
+        When the middleman takes a cut,<br />
+        <span class="text-grad">everyone pays for it.</span>
+      </h1>
+
+      <p class="hero__sub">
+        A typical farmer's rupee travels through <b>4–6 intermediaries</b> before reaching your kitchen.
+        FarmDirect connects <b>farmers and FPOs straight to consumers and bulk buyers</b> — with live demand
+        forecasting and consolidated logistics.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#market" class="btn btn--primary btn--lg">
+          Explore the Marketplace
+          <svg viewBox="0 0 20 20" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h11M11 5l5 5-5 5"/></svg>
+        </a>
+        <a href="#" class="btn btn--ghost btn--lg" data-auth="sell">List your produce</a>
+      </div>
+
+      <div class="hero__stats" id="heroStats">
+        <div class="stat">
+          <span class="stat__num" data-count="86" data-suffix="%">0%</span>
+          <span class="stat__label">Less intermediaries in the chain</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="2.4" data-decimals="1" data-prefix="₹" data-suffix=" Cr">₹0 Cr</span>
+          <span class="stat__label">Annual farmer income unlocked</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num" data-count="31" data-suffix="%">0%</span>
+          <span class="stat__label">Average retail price drop</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chain visual -->
+    <div class="chain-card" aria-label="Comparison of the traditional supply chain versus the FarmDirect chain">
+      <div class="chain-col chain-col--bad">
+        <div class="chain-head">
+          <span class="chain-head__tag">Today</span>
+          <h3>Traditional chain</h3>
+          <p>6 hops · farmer gets <b>₹22</b> of every ₹100</p>
+        </div>
+        <ol class="chain-list">
+          <li style="--w:16%"><span>Farmer</span><i></i></li>
+          <li style="--w:14%"><span>Village trader</span><i></i></li>
+          <li style="--w:13%"><span>Mandi / Agent</span><i></i></li>
+          <li style="--w:12%"><span>Wholesaler</span><i></i></li>
+          <li style="--w:11%"><span>Distributor</span><i></i></li>
+          <li style="--w:10%"><span>Retailer</span><i></i></li>
+          <li class="chain-list__end" style="--w:9%"><span>Consumer ₹100</span></li>
+        </ol>
+        <div class="chain-foot chain-foot--bad">≈ <b>₹78</b> lost to margin, handling &amp; wastage</div>
+      </div>
+
+      <div class="chain-divider"><span>VS</span></div>
+
+      <div class="chain-col chain-col--good">
+        <div class="chain-head">
+          <span class="chain-head__tag chain-head__tag--good">With FarmDirect</span>
+          <h3>Direct chain</h3>
+          <p>2 hops · farmer gets <b>₹69</b> of every ₹100</p>
+        </div>
+        <ol class="chain-list">
+          <li style="--w:69%"><span>Farmer / FPO</span><i></i></li>
+          <li style="--w:31%"><span>Consumer</span></li>
+        </ol>
+        <div class="chain-foot chain-foot--good">≈ <b>₹31</b> saved — and the farmer earns <b>3.1×</b> more</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow eyebrow--red">The Problem</span>
+      <h2 class="sec-title">Every extra hand in the chain takes a cut</h2>
+      <p class="sec-sub">
+        A farmer sells paddy at ₹1,450 per quintal. The same rice reaches a household at ₹2,900.
+        The difference did not reach any farmer — it was absorbed across the chain.
+      </p>
+    </div>
+
+    <div class="chain-viz">
+      <div class="chain-viz__row">
+        <span class="chain-viz__label">Retail price paid by consumer</span>
+        <div class="bar bar--red" style="--v:100%"><span>₹2,900</span></div>
+      </div>
+      <div class="chain-viz__row">
+        <span class="chain-viz__label">Price at wholesale level</span>
+        <div class="bar bar--amber" style="--v:66%"><span>₹1,910</span></div>
+      </div>
+      <div class="chain-viz__row">
+        <span class="chain-viz__label">Mandi procurement rate</span>
+        <div class="bar bar--slate" style="--v:52%"><span>₹1,500</span></div>
+      </div>
+      <div class="chain-viz__row">
+        <span class="chain-viz__label">What the farmer actually receives</span>
+        <div class="bar bar--green" style="--v:50%"><span>₹1,450</span></div>
+      </div>
+      <p class="chain-viz__cap">Illustrative paddy supply chain, per quintal. <b>~50% of the shelf price never reaches the farmer.</b></p>
+    </div>
+
+    <div class="pgrid">
+      <article class="pcard">
+        <div class="pcard__icon pcard__icon--red">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M7 6c0-1.5 1-3 2.5-3S12 4.5 12 6s-1 2.5-2.5 2.5S7 7.5 7 6Z"/><path d="M17 11c0-1.5 1-3 2.5-3S22 9.5 22 11s-1 2.5-2.5 2.5S17 12.5 17 11Z"/></svg>
+        </div>
+        <h3>Farmers earn less</h3>
+        <p>With no direct line to buyers, farmers have no bargaining power and rarely see the final market price. They accept whatever is offered at the nearest mandi.</p>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard__icon pcard__icon--amber">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+        </div>
+        <h3>Consumers pay more</h3>
+        <p>Each layer adds logistics cost, wastage and margin. The same commodity is priced several times over before it reaches the shelf, and small vendors feel it hardest.</p>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard__icon pcard__icon--slate">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg>
+        </div>
+        <h3>Chains get longer</h3>
+        <p>Storage, repacking, unsold stock and delayed payment compound the cost. Produce spoils while it sits across 3–4 storage points before anyone buys it.</p>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard__icon pcard__icon--violet">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg>
+        </div>
+        <h3>No price visibility</h3>
+        <p>Farmers have no access to market intelligence, so they cannot plan planting, time their harvest or negotiate from a position of knowledge.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section class="section solution" id="solution">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">The Solution</span>
+      <h2 class="sec-title">One platform. Three layers. Zero middlemen.</h2>
+      <p class="sec-sub">FarmDirect replaces the chain of traders with a single transparent digital marketplace backed by forecasting and logistics intelligence.</p>
+    </div>
+
+    <div class="layers">
+      <article class="layer layer--1">
+        <span class="layer__num">01</span>
+        <div class="layer__body">
+          <h3>Direct Marketplace</h3>
+          <p>Farmers and FPOs list produce publicly with a visible asking price. Buyers — households, kirana stores, hotels, hostels, caterers, exporters — order directly. No agents, no commission, no undisclosed deductions.</p>
+          <ul class="ticks">
+            <li>Public price listing with grade and quantity</li>
+            <li>Verified FPO and farmer profiles</li>
+            <li>Direct chat and order negotiation</li>
+            <li>Digital receipts and payment trail</li>
+          </ul>
+        </div>
+        <div class="layer__art" aria-hidden="true">
+          <div class="mini-card mini-card--farmer"><span>🌾 Farmer</span><b>₹1,450/qtl</b></div>
+          <div class="mini-link"></div>
+          <div class="mini-card mini-card--buyer"><span>🛒 Buyer</span><b>₹1,450/qtl</b></div>
+        </div>
+      </article>
+
+      <article class="layer layer--2">
+        <span class="layer__num">02</span>
+        <div class="layer__body">
+          <h3>Demand Prediction Engine</h3>
+          <p>A forecasting model trained on mandi price history, seasonal patterns, weather, festival calendars and local event data. It tells farmers what will be in demand, where, and roughly when — so they harvest and sell into a market that actually exists.</p>
+          <ul class="ticks">
+            <li>7 / 14 / 30-day demand forecast per crop and district</li>
+            <li>Price band prediction with confidence score</li>
+            <li>Over-supply and shortage early warnings</li>
+            <li>Harvest-window recommendations by region</li>
+          </ul>
+        </div>
+        <div class="layer__art" aria-hidden="true">
+          <svg viewBox="0 0 200 90" class="spark" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#16a34a" stop-opacity=".35"/>
+                <stop offset="100%" stop-color="#16a34a" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,72 L25,66 L50,70 L75,55 L100,58 L125,42 L150,45 L175,28 L200,20 L200,90 L0,90 Z" fill="url(#sparkFill)"/>
+            <path d="M0,72 L25,66 L50,70 L75,55 L100,58 L125,42 L150,45 L175,28 L200,20" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </article>
+
+      <article class="layer layer--3">
+        <span class="layer__num">03</span>
+        <div class="layer__body">
+          <h3>Smart Logistics &amp; Consolidation</h3>
+          <p>Small lots from neighbouring farms are pooled into shared, full-value vehicle loads. Routing is optimised by proximity and load factor, cutting per-kilometre cost for every farm in the pool and shrinking the delivery window.</p>
+          <ul class="ticks">
+            <li>Automatic lot aggregation from nearby farms</li>
+            <li>Route optimisation with live tracking</li>
+            <li>Cold-chain and quality-checked handling</li>
+            <li>Split delivery to multiple small buyers</li>
+          </ul>
+        </div>
+        <div class="layer__art" aria-hidden="true">
+          <div class="truck">
+            <span class="truck__box"></span>
+            <span class="truck__cab"></span>
+            <span class="truck__wheel truck__wheel--a"></span>
+            <span class="truck__wheel truck__wheel--b"></span>
+          </div>
+          <div class="truck__tags"><i>+40% load factor</i><i>−28% cost/kg</i></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section how" id="how">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="sec-title">From the field to your door in five steps</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n">1</span>
+        <div class="step__icon">🌱</div>
+        <h3>List</h3>
+        <p>The farmer or FPO uploads crop, grade, quantity and an asking price. Verification happens through geo-tagged harvest proof and FPO records.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">2</span>
+        <div class="step__icon">🔮</div>
+        <h3>Forecast</h3>
+        <p>Demand intelligence matches the listing to likely buyers in the region and suggests a competitive price band before the produce moves.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">3</span>
+        <div class="step__icon">🤝</div>
+        <div class="step__body">
+          <h3>Match &amp; Confirm</h3>
+          <p>Buyers receive matched offers and place orders directly with the farm. Contracts, weights and grades are recorded on-platform — both sides see the same terms.</p>
+        </div>
+      </li>
+      <li class="step">
+        <span class="step__n">4</span>
+        <div class="step__icon">🚚</div>
+        <h3>Consolidate &amp; Ship</h3>
+        <p>Nearby farm lots are pooled into one vehicle load. The shipment is tracked door to door, with quality checks at collection.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">5</span>
+        <div class="step__icon">💸</div>
+        <h3>Settle</h3>
+        <p>Payment is released on confirmed delivery, straight to the farmer's account or FPO pool. Receipts, weight slips and deductions — if any — are itemised in the app.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ MARKETPLACE ============ -->
+<section class="section market" id="market">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Live Marketplace</span>
+      <h2 class="sec-title">Today's listings — farmer price, straight to you</h2>
+      <p class="sec-sub">Sample listings from the pilot districts. Filter by category, or search by crop or district.</p>
+    </div>
+
+    <div class="market__bar">
+      <div class="filters" id="filters" role="group" aria-label="Filter listings by category">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="grain">Grains</button>
+        <button class="chip" data-filter="veg">Vegetables</button>
+        <button class="chip" data-filter="fruit">Fruits</button>
+        <button class="chip" data-filter="oil">Oilseeds</button>
+        <button class="chip" data-filter="spice">Spices</button>
+      </div>
+      <div class="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search crop or district…" aria-label="Search listings" />
+      </div>
+    </div>
+
+    <div class="listings" id="listings"></div>
+    <p class="listings__empty" id="listingsEmpty" hidden>No listings match that search. Try a different crop or district.</p>
+  </div>
+</section>
+
+<!-- ============ DEMAND FORECAST ============ -->
+<section class="section forecast" id="forecast">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Demand Prediction Engine</span>
+      <h2 class="sec-title">What the market is expected to pay</h2>
+      <p class="sec-sub">
+        Forecasts are generated from mandi price history, seasonality and district-level demand.
+        Change the district to load its live model output.
+      </p>
+    </div>
+
+    <div class="fc">
+      <div class="fc__controls">
+        <label class="ctrl">
+          <span class="ctrl__label">District</span>
+          <div class="ctrl__row">
+            <select class="select" id="fcDistrict">
+              <option value="Guntur">Guntur, Andhra Pradesh</option>
+              <option value="Bapatla">Bapatla, Andhra Pradesh</option>
+              <option value="Kurnool">Kurnool, Andhra Pradesh</option>
+              <option value="Nadia">Nadia, West Bengal</option>
+              <option value="Malda">Malda, West Bengal</option>
+              <option value="Dharwad">Dharwad, Karnataka</option>
+              <option value="Hubballi">Hubballi, Karnataka</option>
+              <option value="Bareilly">Bareilly, Uttar Pradesh</option>
+            </select>
+          </div>
+        </label>
+
+        <label class="ctrl">
+          <span class="ctrl__label">Forecast horizon</span>
+          <div class="ctrl__row">
+            <div class="seg" id="fcHorizon" role="group" aria-label="Forecast horizon">
+              <button class="seg__btn is-active" data-horizon="7">7 days</button>
+              <button class="seg__btn" data-horizon="14">14 days</button>
+              <button class="seg__btn" data-horizon="30">30 days</button>
+            </div>
+          </div>
+        </label>
+
+        <div class="fc__model" id="fcModel">
+          <span class="fc__model-dot"></span>
+          <span id="fcModelText">baseline-v1 · recency-weighted mandi mean</span>
+        </div>
+      </div>
+
+      <div class="fc__table-wrap">
+        <table class="fc__table">
+          <thead>
+            <tr>
+              <th scope="col">Crop</th>
+              <th scope="col">Predicted</th>
+              <th scope="col">Range</th>
+              <th scope="col">Demand</th>
+              <th scope="col">Confidence</th>
+              <th scope="col">Signal</th>
+            </tr>
+          </thead>
+          <tbody id="fcBody"></tbody>
+        </table>
+        <p class="fc__empty" id="fcEmpty" hidden>No forecast available for this district yet. Seed the price history to generate one.</p>
+      </div>
+    </div>
+
+    <p class="fc__note">
+      <b>Read this before you harvest.</b> A forecast is a planning signal, not a promise — always confirm
+      the current mandi rate on the day. Prices shown are per quintal.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SAVINGS CALCULATOR ============ -->
+<section class="section calc" id="calculator">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Savings Calculator</span>
+      <h2 class="sec-title">See what the same basket costs without the chain</h2>
+      <p class="sec-sub">Drag to set basket size. Numbers update live against typical Indian retail and FarmDirect prices.</p>
+    </div>
+
+    <div class="calc__box">
+      <div class="calc__controls">
+        <label class="ctrl">
+          <span class="ctrl__label">Monthly household grocery budget</span>
+          <div class="ctrl__row">
+            <input type="range" id="budgetRange" min="2000" max="40000" step="500" value="12000" />
+            <output id="budgetOut">₹12,000</output>
+          </div>
+        </label>
+
+        <label class="ctrl">
+          <span class="ctrl__label">Share of basket sourced through intermediaries</span>
+          <div class="ctrl__row">
+            <input type="range" id="shareRange" min="30" max="100" step="5" value="100" />
+            <output id="shareOut">100%</output>
+          </div>
+        </label>
+
+        <label class="ctrl">
+          <span class="ctrl__label">Average number of intermediaries in your chain</span>
+          <div class="ctrl__row">
+            <input type="range" id="hopsRange" min="1" max="6" step="1" value="5" />
+            <output id="hopsOut">5 hops</output>
+          </div>
+        </label>
+
+        <p class="ctrl__note">Reduction in price scales with how many intermediaries we remove — a 6-hop chain has far more removable margin than a 1-hop one.</p>
+      </div>
+
+      <div class="calc__results">
+        <div class="calc__result">
+          <span class="calc__result-label">You spend today</span>
+          <span class="calc__result-value" id="outToday">₹12,000</span>
+        </div>
+        <div class="calc__result calc__result--good">
+          <span class="calc__result-label">You spend on FarmDirect</span>
+          <span class="calc__result-value" id="outDirect">₹8,280</span>
+        </div>
+        <div class="calc__result calc__result--save">
+          <span class="calc__result-label">You keep</span>
+          <span class="calc__result-value" id="outSave">₹3,720<small>/month</small></span>
+        </div>
+
+        <div class="calc__barwrap">
+          <div class="bar bar--red bar--anim" style="--v:100%"><span>Today</span></div>
+          <div class="bar bar--green bar--anim" id="outBar" style="--v:69%"><span>FarmDirect</span></div>
+        </div>
+
+        <p class="calc__foot">
+          Of your <b id="outFrac">₹3,720</b> saved each month, roughly <b>72%</b> flows back to farmers as income —
+          equivalent to <b id="outFarmers">~9 extra quintals</b> of paddy a year at current MSP.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES / TECH ============ -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Technology</span>
+      <h2 class="sec-title">Built for the realities of Indian farming</h2>
+    </div>
+
+    <div class="fgrid">
+      <article class="fcard">
+        <div class="fcard__icon">📡</div>
+        <h3>Low-bandwidth first</h3>
+        <p>Progressive loading, offline listing drafts over SMS/USSD fallback, and image compression on upload so it works on a 2G connection in a village.</p>
+      </article>
+      <article class="fcard">
+        <div class="fcard__icon">🗣️</div>
+        <h3>Voice and regional language</h3>
+        <p>Full UI in English, हिन्दी, తెలుగు, বাংলা, मराठी, தமிழ் and more. Voice-assisted listing for low-literacy users — speak the crop and quantity, the form fills itself.</p>
+      </article>
+      <article class="fcard">
+        <div class="fcard__icon">🤖</div>
+        <h3>Forecast &amp; price intelligence</h3>
+        <p>Gradient-boosted regression over mandi history, rainfall, festival and event signals, with a confidence band so farmers know how much to trust the number.</p>
+      </article>
+      <article class="fcard">
+        <div class="fcard__icon">🧾</div>
+        <h3>Verified, tamper-proof records</h3>
+        <p>Geo-tagged harvest proof, digital weighbridge slips and a full price trail. Every transaction leaves an auditable record that regulators can inspect.</p>
+      </article>
+      <article class="fcard">
+        <div class="fcard__icon">🚜</div>
+        <h3>Route optimisation</h3>
+        <p>Consolidation engine clusters nearby lots, fills vehicles to a target load factor and splits deliveries across buyers — cutting cost per kilogram for small farms.</p>
+      </article>
+      <article class="fcard">
+        <div class="fcard__icon">🛡️</div>
+        <h3>Direct government rails</h3>
+        <p>Built to interoperate with e-NAM, NAFED, FPO registries and state MSP procurement, with transparent grievance and dispute escalation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section class="section impact" id="impact">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Expected Impact</span>
+      <h2 class="sec-title">What changes when the chain collapses</h2>
+      <p class="sec-sub">Modelled on pilot-district volumes across 3 states and 1,200 FPOs over 12 months.</p>
+    </div>
+
+    <div class="impact__grid">
+      <div class="imp">
+        <span class="imp__num" data-count="86" data-suffix="%">0%</span>
+        <h3>Fewer intermediaries</h3>
+        <p>Average chain length falls from 5–6 hops to 2.</p>
+      </div>
+      <div class="imp">
+        <span class="imp__num" data-count="3.1" data-decimals="1" data-suffix="×">0×</span>
+        <h3>Farmer income</h3>
+        <p>Gross realisation per quintal rises against the mandi rate.</p>
+      </div>
+      <div class="imp">
+        <span class="imp__num" data-count="31" data-suffix="%">0%</span>
+        <h3>Lower consumer prices</h3>
+        <p>Average reduction on sourced staple and produce baskets.</p>
+      </div>
+      <div class="imp">
+        <span class="imp__num" data-count="42" data-suffix="%">0%</span>
+        <h3>Less post-harvest waste</h3>
+        <p>Pre-aggregated demand means produce moves before it spoils.</p>
+      </div>
+      <div class="imp">
+        <span class="imp__num" data-count="28" data-suffix="%">0%</span>
+        <h3>Logistics cost per kg</h3>
+        <p>From pooled full-value vehicle loads and optimised routes.</p>
+      </div>
+      <div class="imp">
+        <span class="imp__num" data-count="1200" data-suffix="+">0+</span>
+        <h3>FPOs onboarded</h3>
+        <p>Farmer Producer Organisations served in the pilot phase.</p>
+      </div>
+    </div>
+
+    <div class="quote-strip">
+      <blockquote>
+        "We sold our paddy for three seasons to the same trader at whatever he named.
+        The moment we could see what the market was paying in Mandi, he offered more — without us arguing."
+      </blockquote>
+      <figcaption>
+        <span class="quote-strip__avatar">LV</span>
+        <div><b>Lakshmi Venkatesh</b><small>FPO secretary, Bapatla — Andhra Pradesh</small></div>
+      </figcaption>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="join">
+  <div class="container cta__inner">
+    <div class="cta__text">
+      <h2>Put the farmer and the consumer in the same room.</h2>
+      <p>FarmDirect is open to farmers, FPOs, bulk buyers and district administrations across India. Pick a lane and start trading direct.</p>
+    </div>
+    <div class="cta__actions">
+      <a href="#" class="btn btn--primary btn--lg" data-auth="farmer">Join as a Farmer / FPO</a>
+      <a href="#" class="btn btn--white btn--lg" data-auth="buyer">Buy directly as a Business</a>
+      <a href="#" class="btn btn--ghost btn--lg" data-auth="govt">Partner with a District</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="#top" class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="22" height="22"><path d="M16 3c5 4 8 8 8 13a8 8 0 0 1-16 0c0-5 3-9 8-13Z" fill="currentColor" opacity=".22"/><path d="M16 6v20M16 12c-2-1-4-1-6 0M16 17c2-1 4-1 6 0M16 9c1.5-1 3-1.5 4.5-1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+        </span>
+        <span class="brand__text">Farm<b>Direct</b></span>
+      </a>
+      <p>A direct farmer-to-consumer trade network with demand forecasting and consolidated logistics, built to cut the intermediaries out of India's food chain.</p>
+      <p class="footer__tag">SIH26033 · Agriculture, FoodTech &amp; Rural Development</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Platform</h4>
+      <a href="#solution">Direct Marketplace</a>
+      <a href="#forecast">Demand Prediction</a>
+      <a href="#solution">Logistics &amp; Consolidation</a>
+      <a href="#market">Browse listings</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Get involved</h4>
+      <a href="#" data-auth="farmer">Register as Farmer / FPO</a>
+      <a href="#" data-auth="buyer">Bulk &amp; retail buying</a>
+      <a href="#" data-auth="govt">District / State partnership</a>
+      <a href="#calculator">Savings calculator</a>
+      <a href="#forecast">Demand forecast</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Pilot districts</h4>
+      <span>Andhra Pradesh · Guntur, Bapatla</span>
+      <span>Karnataka · Dharwad, Hubballi</span>
+      <span>West Bengal · Nadia, Malda</span>
+      <span>Uttar Pradesh · Bareilly</span>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>© 2026 FarmDirect. A Smart India Hackathon 2026 concept build.</span>
+    <span class="footer__note">Demonstration site — listings and metrics are illustrative sample data.</span>
+  </div>
+</footer>
+
+<!-- ============ ORDER MODAL ============ -->
+<div class="modal" id="orderModal" hidden>
+  <div class="modal__backdrop" data-order-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <button class="modal__close" data-order-close aria-label="Close">✕</button>
+
+    <span class="order__emoji" id="orderEmoji">🌾</span>
+    <h3 id="orderTitle">Place a direct order</h3>
+    <p id="orderSub">You are buying straight from the farm — no trader margin in between.</p>
+
+    <div class="order__facts" id="orderFacts"></div>
+
+    <form id="orderForm" novalidate>
+      <div class="field">
+        <label for="oQty">Quantity (<span id="oUnit">qtl</span>)</label>
+        <input class="input" id="oQty" type="number" min="0.1" step="0.1" value="1" />
+        <small class="field__hint" id="oAvail"></small>
+      </div>
+      <div class="field">
+        <label for="oAddr">Delivery address</label>
+        <textarea class="input" id="oAddr" rows="2" placeholder="House / shop, street, district, state" required></textarea>
+      </div>
+
+      <div class="order__totals" id="orderTotals"></div>
+
+      <p class="field__error" id="orderError" hidden></p>
+      <p class="form__done" id="orderDone" hidden></p>
+
+      <button class="btn btn--primary btn--block" type="submit" id="orderSubmit">Confirm direct order</button>
+      <p class="order__foot">Payment is held by the platform and released to the farmer on confirmed delivery.</p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ SELL (CREATE LISTING) MODAL ============ -->
+<div class="modal" id="sellModal" hidden>
+  <div class="modal__backdrop" data-sell-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="sellTitle">
+    <button class="modal__close" data-sell-close aria-label="Close">✕</button>
+    <h3 id="sellTitle">List your produce</h3>
+    <p>Publish a listing with a visible price. Buyers order directly — you keep the full amount.</p>
+
+    <form id="sellForm" novalidate>
+      <div class="field">
+        <label for="sCrop">Crop</label>
+        <input class="input" id="sCrop" required placeholder="e.g. Paddy (Sona Masoori)" />
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="sCategory">Category</label>
+          <select class="select" id="sCategory">
+            <option value="grain">Grains</option>
+            <option value="veg">Vegetables</option>
+            <option value="fruit">Fruits</option>
+            <option value="oil">Oilseeds &amp; oil</option>
+            <option value="spice">Spices</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sGrade">Grade</label>
+          <input class="input" id="sGrade" placeholder="e.g. Grade A" />
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="sQty">Quantity</label>
+          <input class="input" id="sQty" type="number" min="0.1" step="0.1" value="10" required />
+        </div>
+        <div class="field">
+          <label for="sUnit">Unit</label>
+          <select class="select" id="sUnit">
+            <option value="qtl">Quintal</option>
+            <option value="kg">Kilogram</option>
+            <option value="ton">Tonne</option>
+            <option value="crates">Crates</option>
+            <option value="KL">Kilolitre</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="sPrice">Your price / unit (₹)</label>
+          <input class="input" id="sPrice" type="number" min="1" step="1" required placeholder="2180" />
+        </div>
+        <div class="field">
+          <label for="sMrp">Retail reference (₹)</label>
+          <input class="input" id="sMrp" type="number" min="0" step="1" placeholder="2900" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="sDesc">Description</label>
+        <textarea class="input" id="sDesc" rows="2" placeholder="Quality, packing, harvest date, delivery radius"></textarea>
+      </div>
+
+      <p class="field__error" id="sellError" hidden></p>
+      <p class="form__done" id="sellDone" hidden></p>
+
+      <button class="btn btn--primary btn--block" type="submit" id="sellSubmit">Publish listing</button>
+    </form>
+  </div>
+</div>
+
+<div class="app-status" id="appStatus" hidden></div>
+
+<div class="backend-bar" id="backendBar" hidden>
+  <div class="container backend-bar__inner">
+    <span class="backend-bar__dot"></span>
+    <b id="backendBarTitle">Demo mode</b>
+    <span id="backendBarText">
+      Running on bundled sample data — orders and sign-in are stored in your browser only.
+    </span>
+    <a href="SUPABASE_SETUP.md" class="backend-bar__link" id="backendBarLink" target="_blank" rel="noopener">Connect Supabase</a>
+    <button class="backend-bar__x" id="backendBarClose" type="button" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth-ui.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

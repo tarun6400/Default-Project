@@ -1,0 +1,83 @@
+.notifications { padding-top: 40px; padding-bottom: 60px; min-height: 70vh; }
+
+.notif__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+.notif__head h1 { font-size: clamp(26px, 3.2vw, 38px); margin-top: 10px; text-shadow: 0 1px 0 rgba(255, 253, 247, 0.9), 0 0 18px rgba(255, 253, 247, 0.55); }
+
+.notif__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: var(--r-full);
+  background: linear-gradient(135deg, var(--clay-500), #C04A2C);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 800;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+.notif__sms {
+  color: var(--ink-500);
+  font-size: 14.5px;
+  margin-top: 4px;
+}
+
+.notif__list { display: grid; gap: 4px; }
+
+.notif__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  border-radius: var(--r-lg);
+  background: var(--white);
+  border: 1px solid var(--cream-300);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.notif__item:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.notif__item.unread {
+  background: var(--grain-100);
+  border-color: var(--grain-300);
+  box-shadow: 0 2px 12px rgba(74, 122, 68, 0.08);
+}
+
+.notif__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.notif__body { flex: 1; min-width: 0; }
+.notif__top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.notif__top h3 { font-family: var(--font-body); font-size: 16px; font-weight: 800; color: var(--ink-800); }
+.notif__unread-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--clay-500); flex-shrink: 0; }
+.notif__body p { color: var(--ink-500); font-size: 14.5px; line-height: 1.6; }
+
+.notif__time { white-space: nowrap; font-size: 12.5px; font-weight: 700; color: var(--ink-400); flex-shrink: 0; }
+
+.notif__empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--ink-400);
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 560px) {
+  .notif__item { flex-direction: column; gap: 10px; }
+  .notif__time { margin-top: -4px; }
+}
