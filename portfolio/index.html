@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tarun Yarlapati — Aspiring AI Engineer · Folio ©2026</title>
+<meta name="description" content="Portfolio of Yarlapati Venkata Naga Durga Tarun — B.Tech student aspiring AI engineer, Sri Vasavi Engineering College." />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE8DC; --paper2:#E4DED1; --ink:#141412; --muted:#6f6a5e;
+    --accent:#FF4D00; --line:rgba(20,20,18,.14); --card:#F6F2E8;
+  }
+  html.dark{ --paper:#131311; --paper2:#1c1c19; --ink:#EDE8DC; --muted:#a49c8a; --line:rgba(237,232,220,.16); --card:#1a1a17; }
+  *{ -webkit-tap-highlight-color: transparent; }
+  body{ background:var(--paper); color:var(--ink); font-family:"Space Grotesk",sans-serif; overflow-x:hidden; transition:background .5s,color .5s; }
+  .font-display{ font-family:"Syne",sans-serif; } .font-serif-i{ font-family:"Instrument Serif",serif; font-style:italic; } .font-mono2{ font-family:"JetBrains Mono",monospace; }
+  .outline-text{ -webkit-text-stroke:1.5px var(--ink); color:transparent; }
+  .noise::after{ content:""; position:fixed; inset:0; pointer-events:none; z-index:90; opacity:.07; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  html.dark .noise::after{ mix-blend-mode:screen; opacity:.08; }
+  #loader{ position:fixed; inset:0; z-index:200; background:#141412; color:#EDE8DC; display:flex; align-items:flex-end; justify-content:space-between; padding:2rem; transition:transform .9s cubic-bezier(.76,0,.24,1); }
+  #loader.done{ transform:translateY(-101%); }
+  @keyframes marquee{ to{ transform:translateX(-50%);} }
+  .marquee-track{ display:flex; width:max-content; animation:marquee 22s linear infinite; }
+  .marquee-track.slow{ animation-duration:34s; }
+  .rv{ opacity:0; transform:translateY(36px); transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1); }
+  .rv.in{ opacity:1; transform:none; }
+  .rv-d1{ transition-delay:.08s } .rv-d2{ transition-delay:.16s }
+  .u-link{ position:relative; } .u-link::after{ content:""; position:absolute; left:0; bottom:-3px; height:1px; width:100%; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .4s cubic-bezier(.76,0,.24,1); }
+  .u-link:hover::after{ transform:scaleX(1); transform-origin:left; }
+  .proj{ border-top:1px solid var(--line); transition:background .4s; }
+  .proj:hover{ background:var(--card); }
+  .proj .p-img{ transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s; filter:grayscale(1) contrast(1.05); }
+  .proj:hover .p-img{ transform:scale(1.045) rotate(-.5deg); filter:grayscale(0); }
+  .proj .p-arrow{ transition:transform .45s cubic-bezier(.22,1,.36,1),background .3s,color .3s; }
+  .proj:hover .p-arrow{ transform:translate(6px,-6px); background:var(--accent); color:#fff; border-color:var(--accent); }
+  .skill{ border-top:1px solid var(--line); } .skill:last-child{ border-bottom:1px solid var(--line); }
+  .skill .bar{ height:3px; background:var(--line); overflow:hidden; border-radius:99px; } .skill .fill{ height:100%; width:0; background:var(--accent); transition:width 1.2s cubic-bezier(.22,1,.36,1); border-radius:99px; }
+  #cursor{ position:fixed; z-index:150; width:14px; height:14px; border-radius:99px; background:var(--accent); pointer-events:none; transform:translate(-50%,-50%) scale(1); transition:transform .25s; }
+  #cursor.big{ transform:translate(-50%,-50%) scale(3.2); opacity:.9; }
+  @media (pointer:coarse){ #cursor{display:none} }
+  .v-text{ writing-mode:vertical-rl; }
+  .sec-num{ font-family:"JetBrains Mono",monospace; font-size:11px; letter-spacing:.25em; border:1px solid var(--line); border-radius:99px; padding:.45rem .9rem; }
+  .tick{ width:8px; height:8px; border-radius:99px; background:#22c55e; box-shadow:0 0 0 6px rgba(34,197,94,.18); animation:pulse 2s infinite; }
+  @keyframes pulse{ 50%{ box-shadow:0 0 0 10px rgba(34,197,94,.08);} }
+  @keyframes spin{ to{ transform:rotate(360deg);} } .spin-slow{ animation:spin 14s linear infinite; }
+  @keyframes floaty{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} } .floaty{ animation:floaty 6s ease-in-out infinite; }
+  ::selection{ background:var(--accent); color:#fff; }
+  #progress{ position:fixed; top:0; left:0; height:3px; background:var(--accent); z-index:120; width:0; }
+  input,textarea{ background:transparent; } input:focus,textarea:focus{ outline:none; border-color:var(--accent)!important; }
+  .btn-pill{ transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .3s,color .3s; } .btn-pill:hover{ transform:translateY(-2px); }
+  .btn-pill:active{ transform:translateY(0) scale(.97); }
+</style>
+</head>
+<body class="noise antialiased">
+
+<div id="progress"></div>
+<div id="cursor"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div>
+    <p class="font-mono2 text-xs tracking-[.3em] opacity-60">FOLIO ©2026 — LOADING</p>
+    <h1 class="font-display text-4xl md:text-6xl font-extrabold leading-none mt-3">TARUN<span style="color:#FF4D00">.</span></h1>
+  </div>
+  <div id="loadnum" class="font-display text-7xl md:text-9xl font-extrabold tabular-nums">0</div>
+</div>
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-[100] backdrop-blur-md" style="background:color-mix(in srgb, var(--paper) 82%, transparent); border-bottom:1px solid var(--line)">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-10 h-[64px] flex items-center justify-between gap-4">
+    <a href="#top" class="font-display font-extrabold tracking-tight text-lg">TARUN<span style="color:#FF4D00">©</span></a>
+    <nav class="hidden md:flex items-center gap-8 font-mono2 text-[11px] tracking-[.22em]">
+      <a href="#about" class="u-link">ABOUT</a>
+      <a href="#skills" class="u-link">SKILLS</a>
+      <a href="#work" class="u-link">WORK<sup class="ml-1 px-1.5 py-0.5 rounded-full text-[9px]" style="background:var(--ink);color:var(--paper)">3</sup></a>
+      <a href="#journey" class="u-link">JOURNEY</a>
+      <a href="#contact" class="u-link">CONTACT</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <span class="hidden sm:flex items-center gap-2 font-mono2 text-[10px] tracking-[.2em] opacity-70"><span class="tick"></span> B.TECH · 2024–28</span>
+      <span id="clock" class="hidden lg:inline font-mono2 text-[11px] opacity-60 tabular-nums">00:00 IST</span>
+      <button id="themeBtn" aria-label="toggle theme" class="btn-pill w-9 h-9 rounded-full border flex items-center justify-center text-sm" style="border-color:var(--line)">◐</button>
+      <a href="#contact" class="btn-pill hidden sm:inline-flex font-mono2 text-[11px] tracking-[.18em] px-5 py-2.5 rounded-full font-medium" style="background:var(--ink);color:var(--paper)">LET'S TALK ↗</a>
+      <button id="menuBtn" class="md:hidden w-9 h-9 rounded-full border flex items-center justify-center" style="border-color:var(--line)">≡</button>
+    </div>
+  </div>
+  <div id="mmenu" class="md:hidden hidden px-5 pb-5 pt-1 font-display font-bold text-2xl space-y-2" style="background:var(--paper)">
+    <a href="#about" class="block border-t pt-3" style="border-color:var(--line)">About</a>
+    <a href="#skills" class="block border-t pt-3" style="border-color:var(--line)">Skills</a>
+    <a href="#work" class="block border-t pt-3" style="border-color:var(--line)">Work</a>
+    <a href="#journey" class="block border-t pt-3" style="border-color:var(--line)">Journey</a>
+    <a href="#contact" class="block border-t pt-3" style="border-color:var(--line)">Contact</a>
+  </div>
+</header>
+
+<main id="top" class="pt-[64px]">
+<!-- ═════════ HERO ═════════ -->
+<section class="max-w-[1400px] mx-auto px-5 md:px-10 pt-8 md:pt-14 pb-10 relative">
+  <div class="flex items-center justify-between font-mono2 text-[10px] md:text-[11px] tracking-[.25em] opacity-70 rv">
+    <span>◉ FOLIO — VOL.01 / 2026</span>
+    <span class="hidden md:inline">ASPIRING AI ENGINEER</span>
+    <span>UNGUTURU, ELURU — ANDHRA PRADESH</span>
+  </div>
+
+  <h1 class="font-display font-extrabold leading-[.88] tracking-tight mt-6 select-none">
+    <span class="block text-[15.5vw] md:text-[10vw] rv">ASPIRING</span>
+    <span class="block text-[15.5vw] md:text-[10vw] rv rv-d1"><span class="font-serif-i font-normal">intelli—</span><span class="outline-text">GENCE</span></span>
+    <span class="block text-[15.5vw] md:text-[10vw] rv rv-d2">ENGINEER<span style="color:#FF4D00">.</span></span>
+  </h1>
+
+  <div class="grid md:grid-cols-12 gap-8 mt-8 md:mt-12 items-end">
+    <div class="md:col-span-4 rv">
+      <p class="text-base md:text-lg leading-relaxed opacity-80 max-w-sm">
+        Hi, I'm <strong>Yarlapati Venkata Naga Durga Tarun</strong> — a B.Tech student at
+        <strong>Sri Vasavi Engineering College</strong>, passionate about building intelligent systems with Python, data analysis &amp; machine learning.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-6">
+        <a href="#work" class="btn-pill font-mono2 text-[11px] tracking-[.15em] px-6 py-3 rounded-full font-medium" style="background:var(--accent);color:#fff">VIEW WORK ↓</a>
+        <a href="https://www.linkedin.com/in/venkata-naga-durga-tarun-yarlapati-6aaa5a317" target="_blank" rel="noopener" class="btn-pill font-mono2 text-[11px] tracking-[.15em] px-6 py-3 rounded-full border" style="border-color:var(--line)">LINKEDIN ↗</a>
+      </div>
+      <p class="font-mono2 text-[11px] tracking-[.15em] mt-4 inline-block px-3 py-1.5 rounded-full" style="background:var(--ink);color:var(--paper)">🥈 SIH 2ND-PRIZE WINNER</p>
+      <p class="font-mono2 text-[11px] tracking-[.2em] mt-4 opacity-60">▸ CURRENTLY: <span id="typer" class="font-medium" style="color:var(--accent)">learning machine learning</span><span class="animate-pulse">_</span></p>
+    </div>
+
+    <div class="md:col-span-5 rv rv-d1">
+      <div class="relative rounded-2xl overflow-hidden border" style="border-color:var(--line)">
+        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200&auto=format&fit=crop" alt="AI artwork" class="w-full h-[300px] md:h-[360px] object-cover" />
+        <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(0,0,0,.55), transparent 55%)"></div>
+        <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
+          <div><p class="font-mono2 text-[10px] tracking-[.25em] opacity-80">FIG.01 — PYTHON × DATA × ML</p>
+          <p class="font-serif-i text-2xl">building intelligent systems</p></div>
+          <div class="w-14 h-14 rounded-full border border-white/40 flex items-center justify-center spin-slow text-lg">✳</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-3 grid grid-cols-3 md:grid-cols-1 gap-px rounded-2xl overflow-hidden border rv rv-d2" style="border-color:var(--line); background:var(--line)">
+      <div class="p-5" style="background:var(--paper)"><p class="font-display text-4xl font-extrabold tabular-nums">8.3</p><p class="font-mono2 text-[10px] tracking-[.2em] opacity-60 mt-1">B.TECH CGPA</p></div>
+      <div class="p-5" style="background:var(--paper)"><p class="font-display text-4xl font-extrabold tabular-nums"><span class="count" data-n="3">0</span></p><p class="font-mono2 text-[10px] tracking-[.2em] opacity-60 mt-1">PROJECTS BUILT</p></div>
+      <div class="p-5" style="background:var(--paper)"><p class="font-display text-4xl font-extrabold tabular-nums"><span class="count" data-n="8">0</span></p><p class="font-mono2 text-[10px] tracking-[.2em] opacity-60 mt-1">TECH SKILLS</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="border-y overflow-hidden py-3 select-none" style="border-color:var(--line); background:var(--ink); color:var(--paper)">
+  <div class="marquee-track font-display font-bold text-lg md:text-xl tracking-tight">
+    <span class="px-4 whitespace-nowrap">C ✦ JAVA ✦ DATA STRUCTURES ✦ PYTHON ✦ HTML ✦ CSS ✦ JAVASCRIPT ✦ MACHINE LEARNING ✦&nbsp;</span>
+    <span class="px-4 whitespace-nowrap">C ✦ JAVA ✦ DATA STRUCTURES ✦ PYTHON ✦ HTML ✦ CSS ✦ JAVASCRIPT ✦ MACHINE LEARNING ✦&nbsp;</span>
+  </div>
+</div>
+
+<!-- ═════════ ABOUT ═════════ -->
+<section id="about" class="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28 grid md:grid-cols-12 gap-10">
+  <div class="md:col-span-3 rv">
+    <span class="sec-num">● 01 — PROFILE</span>
+    <p class="v-text hidden md:block font-mono2 text-[10px] tracking-[.35em] opacity-40 mt-8">SCROLL — SCROLL — SCROLL</p>
+  </div>
+  <div class="md:col-span-5 rv">
+    <h2 class="font-display font-extrabold text-4xl md:text-6xl leading-[.95] tracking-tight">Student by day,<br/><span class="font-serif-i font-normal">AI builder</span><br/>in progress.</h2>
+    <p class="mt-6 leading-relaxed opacity-80">Aspiring AI engineer passionate about building intelligent systems, with hands-on knowledge of Python, data analysis, and machine learning — looking to contribute to innovative projects while continuously expanding technical expertise.</p>
+    <div class="flex flex-wrap gap-2 mt-5 font-mono2 text-[10px] tracking-[.15em]">
+      <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">📍 UNGUTURU, ELURU 534411</span>
+      <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">🗣 TELUGU + ENGLISH</span>
+    </div>
+    <div class="flex gap-6 mt-8 font-mono2 text-[11px] tracking-[.18em]">
+      <a href="https://www.linkedin.com/in/venkata-naga-durga-tarun-yarlapati-6aaa5a317" target="_blank" rel="noopener" class="u-link">LINKEDIN ↗</a>
+      <a href="mailto:tarunyarlapati26@gmail.com" class="u-link">EMAIL ↗</a>
+      <a href="tel:+919391866051" class="u-link">CALL ↗</a>
+    </div>
+  </div>
+  <div class="md:col-span-4 rv rv-d1">
+    <div class="rounded-2xl overflow-hidden border floaty" style="border-color:var(--line)">
+      <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop" alt="workspace" class="w-full h-[320px] object-cover" style="filter:grayscale(1) contrast(1.1)" />
+    </div>
+    <div class="grid grid-cols-2 gap-3 mt-3">
+      <div class="rounded-xl p-4 border" style="border-color:var(--line)"><p class="font-mono2 text-[10px] tracking-[.2em] opacity-60">INTERESTS</p><p class="font-display font-bold mt-1 text-sm leading-snug">Photography · Music · Books · Sky-gazing</p></div>
+      <div class="rounded-xl p-4 text-white" style="background:var(--accent)"><p class="font-mono2 text-[10px] tracking-[.2em] opacity-80">NSS VOLUNTEER</p><p class="font-display font-bold mt-1 text-sm leading-snug">Posters: climate &amp; anti-drug</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ SKILLS (resume-accurate) ═════════ -->
+<section id="skills" class="border-y" style="border-color:var(--line); background:var(--paper2)">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-24 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-4 rv">
+      <span class="sec-num">● 02 — SKILLS</span>
+      <h2 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight mt-6 leading-[.95]">What I<br/><span class="outline-text">know</span> so<br/>far<span style="color:#FF4D00">.</span></h2>
+      <p class="mt-5 opacity-70 max-w-xs">Straight from my resume — no padding. Currently strongest in C, Python &amp; DSA; growing daily in ML and web.</p>
+      <div class="flex flex-wrap gap-2 mt-6 font-mono2 text-[10px] tracking-[.15em]">
+        <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">CERTIFIED: PROFESSIONAL ENGLISH COMMUNICATION</span>
+      </div>
+    </div>
+    <div class="md:col-span-8 rv rv-d1">
+      <div class="skill py-5 grid sm:grid-cols-[1fr_140px] gap-3 items-center" data-lvl="80"><div><div class="flex justify-between items-baseline"><h3 class="font-display font-bold text-xl">C Language</h3><span class="font-mono2 text-xs opacity-60">80%</span></div><div class="bar mt-3"><div class="fill"></div></div><p class="text-sm opacity-60 mt-2 font-mono2">basics → pointers → mini projects (calculator)</p></div><span class="font-mono2 text-[10px] tracking-[.2em] opacity-50 sm:text-right">01 / CORE</span></div>
+      <div class="skill py-5 grid sm:grid-cols-[1fr_140px] gap-3 items-center" data-lvl="70"><div><div class="flex justify-between items-baseline"><h3 class="font-display font-bold text-xl">Java</h3><span class="font-mono2 text-xs opacity-60">70%</span></div><div class="bar mt-3"><div class="fill"></div></div><p class="text-sm opacity-60 mt-2 font-mono2">OOP, collections, problem solving</p></div><span class="font-mono2 text-[10px] tracking-[.2em] opacity-50 sm:text-right">02 / CORE</span></div>
+      <div class="skill py-5 grid sm:grid-cols-[1fr_140px] gap-3 items-center" data-lvl="78"><div><div class="flex justify-between items-baseline"><h3 class="font-display font-bold text-xl">Data Structures + Advanced DS</h3><span class="font-mono2 text-xs opacity-60">78%</span></div><div class="bar mt-3"><div class="fill"></div></div><p class="text-sm opacity-60 mt-2 font-mono2">arrays → linked lists → trees, graphs, hashing</p></div><span class="font-mono2 text-[10px] tracking-[.2em] opacity-50 sm:text-right">03 / CS FUNDAMENTALS</span></div>
+      <div class="skill py-5 grid sm:grid-cols-[1fr_140px] gap-3 items-center" data-lvl="75"><div><div class="flex justify-between items-baseline"><h3 class="font-display font-bold text-xl">Python + Machine Learning basics</h3><span class="font-mono2 text-xs opacity-60">75%</span></div><div class="bar mt-3"><div class="fill"></div></div><p class="text-sm opacity-60 mt-2 font-mono2">data analysis → ML models (sleep-quality classifier)</p></div><span class="font-mono2 text-[10px] tracking-[.2em] opacity-50 sm:text-right">04 / AI</span></div>
+      <div class="skill py-5 grid sm:grid-cols-[1fr_140px] gap-3 items-center" data-lvl="72"><div><div class="flex justify-between items-baseline"><h3 class="font-display font-bold text-xl">HTML · CSS · JavaScript</h3><span class="font-mono2 text-xs opacity-60">72%</span></div><div class="bar mt-3"><div class="fill"></div></div><p class="text-sm opacity-60 mt-2 font-mono2">responsive pages, this portfolio included</p></div><span class="font-mono2 text-[10px] tracking-[.2em] opacity-50 sm:text-right">05 / WEB</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ WORK (resume-accurate) ═════════ -->
+<section id="work" class="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6 rv">
+    <div><span class="sec-num">● 03 — PROJECTS</span>
+      <h2 class="font-display font-extrabold tracking-tight leading-[.9] text-[13vw] md:text-[7.5vw] mt-5">WORK<span class="font-serif-i font-normal"> that </span><span class="outline-text">works</span><span style="color:#FF4D00">.</span></h2>
+    </div>
+    <p class="font-mono2 text-[11px] tracking-[.2em] opacity-60 max-w-[240px] leading-relaxed">FROM MY WORK · 3 BUILDS · 🥈 SIH 2ND PRIZE WINNER</p>
+  </div>
+
+  <div class="mt-10 rv">
+    <!-- 01 Sleep quality classifier -->
+    <div class="proj group grid md:grid-cols-12 gap-6 py-8 md:py-10 items-center px-2 md:px-4 rounded-xl">
+      <span class="font-mono2 text-xs opacity-50 md:col-span-1">/01</span>
+      <div class="md:col-span-4 overflow-hidden rounded-xl border" style="border-color:var(--line)"><img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=1000&auto=format&fit=crop" alt="Sleep quality" class="p-img w-full h-[220px] object-cover" /></div>
+      <div class="md:col-span-5"><div class="flex flex-wrap gap-2 font-mono2 text-[10px] tracking-[.15em]"><span class="px-3 py-1 rounded-full" style="background:var(--accent);color:#fff">★ AI/ML PROJECT</span><span class="px-3 py-1 rounded-full border" style="border-color:var(--line)">PYTHON</span><span class="px-3 py-1 rounded-full border" style="border-color:var(--line)">DATA ANALYSIS</span></div>
+        <h3 class="font-display font-extrabold text-3xl md:text-5xl tracking-tight mt-3">Sleep Quality Classifier</h3>
+        <p class="opacity-70 mt-2 max-w-md">Using AI/ML I created a model that predicts sleep quality by taking inputs like sleep hours, lifestyle &amp; habits. My first end-to-end ML build — data prep → training → prediction.</p></div>
+      <span class="md:col-span-2 flex md:justify-end"><span class="p-arrow w-14 h-14 rounded-full border flex items-center justify-center text-xl" style="border-color:var(--line)">✦</span></span>
+    </div>
+    <!-- 02 Kisan Setu -->
+    <div class="proj group grid md:grid-cols-12 gap-6 py-8 md:py-10 items-center px-2 md:px-4 rounded-xl">
+      <span class="font-mono2 text-xs opacity-50 md:col-span-1">/02</span>
+      <div class="md:col-span-4 overflow-hidden rounded-xl border" style="border-color:var(--line)"><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=1000&auto=format&fit=crop" alt="Kisan Setu farm" class="p-img w-full h-[220px] object-cover" /></div>
+      <div class="md:col-span-5"><div class="flex flex-wrap gap-2 font-mono2 text-[10px] tracking-[.15em]"><span class="px-3 py-1 rounded-full" style="background:var(--accent);color:#fff">★ SIH BUILD</span><span class="px-3 py-1 rounded-full border" style="border-color:var(--line)">REACT + TYPESCRIPT</span><span class="px-3 py-1 rounded-full border" style="border-color:var(--line)">AI CHAT + MAPS</span></div>
+        <h3 class="font-display font-extrabold text-3xl md:text-5xl tracking-tight mt-3">Kisan Setu</h3>
+        <p class="opacity-70 mt-2 max-w-md">Bridges Indian farmers to government procurement centers — book delivery slots, skip queues, track status &amp; get paid faster. Multilingual UI, Leaflet maps, dashboard + tracker + notifications, and a Kisan AI assistant for mandi prices &amp; slot help.</p></div>
+      <span class="md:col-span-2 flex md:justify-end"><span class="p-arrow w-14 h-14 rounded-full border flex items-center justify-center text-xl" style="border-color:var(--line)">✦</span></span>
+    </div>
+    <!-- 03 Calculator -->
+    <div class="proj group grid md:grid-cols-12 gap-6 py-8 md:py-10 items-center px-2 md:px-4 rounded-xl" style="border-bottom:1px solid var(--line)">
+      <span class="font-mono2 text-xs opacity-50 md:col-span-1">/03</span>
+      <div class="md:col-span-4 overflow-hidden rounded-xl border" style="border-color:var(--line)"><img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1000&auto=format&fit=crop" alt="C calculator code" class="p-img w-full h-[220px] object-cover" /></div>
+      <div class="md:col-span-5"><div class="flex flex-wrap gap-2 font-mono2 text-[10px] tracking-[.15em]"><span class="px-3 py-1 rounded-full border" style="border-color:var(--line)">C LANGUAGE</span><span class="px-3 py-1 rounded-full border" style="border-color:var(--line)">BEGINNER BUILD</span></div>
+        <h3 class="font-display font-extrabold text-3xl md:text-5xl tracking-tight mt-3">Calculator</h3>
+        <p class="opacity-70 mt-2 max-w-md">Simple and basic calculator built with C language — arithmetic operations via clean functions and console I/O. Where my programming journey started.</p></div>
+      <span class="md:col-span-2 flex md:justify-end"><span class="p-arrow w-14 h-14 rounded-full border flex items-center justify-center text-xl" style="border-color:var(--line)">✦</span></span>
+    </div>
+  </div>
+  <p class="font-mono2 text-[11px] tracking-[.15em] opacity-50 mt-6 rv">🥈 2ND PRIZE — SMART INDIA HACKATHON (SIH) · FIRST-YEAR HACKATHONS — PRACTICAL PROBLEM-SOLVING &amp; TEAMWORK.</p>
+</section>
+
+<!-- MARQUEE 2 -->
+<div class="border-y overflow-hidden py-3" style="border-color:var(--line)">
+  <div class="marquee-track slow font-serif-i text-xl md:text-2xl opacity-80">
+    <span class="px-4 whitespace-nowrap">looking for internships &amp; mentorship — let's build something intelligent — looking for internships &amp; mentorship —&nbsp;</span>
+    <span class="px-4 whitespace-nowrap">looking for internships &amp; mentorship — let's build something intelligent — looking for internships &amp; mentorship —&nbsp;</span>
+  </div>
+</div>
+
+<!-- ═════════ JOURNEY (resume-accurate) ═════════ -->
+<section id="journey" class="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28 grid md:grid-cols-12 gap-10">
+  <div class="md:col-span-4 rv">
+    <span class="sec-num">● 04 — JOURNEY</span>
+    <h2 class="font-display font-extrabold text-4xl md:text-6xl tracking-tight mt-6 leading-[.95]">So far,<br/>so <span class="font-serif-i font-normal">good.</span></h2>
+    <div class="mt-8 rounded-2xl p-6 text-white rv-d1" style="background:var(--ink)">
+      <p class="font-mono2 text-[10px] tracking-[.25em] opacity-60">🏆 HIGHLIGHT</p>
+      <p class="font-serif-i text-2xl mt-2 leading-snug">"2nd Prize — Smart India Hackathon (SIH)."</p>
+      <p class="font-mono2 text-[11px] mt-4 opacity-60">— plus certified Professional English Communication &amp; NSS posters on climate &amp; anti-drug</p>
+    </div>
+  </div>
+  <div class="md:col-span-8 rv rv-d1">
+    <div class="border-t" style="border-color:var(--line)">
+      <div class="grid sm:grid-cols-[110px_1fr_auto] gap-4 py-6 border-b items-start" style="border-color:var(--line)"><span class="font-mono2 text-xs opacity-60">2024 — 2028</span><div><h3 class="font-display font-bold text-xl">Sri Vasavi Engineering College — B.Tech</h3><p class="opacity-70 text-sm mt-1">CGPA 8.3 · C, Java, Data Structures, Python, Web, ML foundations.</p></div><span class="font-mono2 text-[10px] px-3 py-1 rounded-full" style="background:var(--accent);color:#fff">EDUCATION</span></div>
+      <div class="grid sm:grid-cols-[110px_1fr_auto] gap-4 py-6 border-b items-start" style="border-color:var(--line)"><span class="font-mono2 text-xs opacity-60">2022 — 2024</span><div><h3 class="font-display font-bold text-xl">Sasi New Gen Junior College — Intermediate</h3><p class="opacity-70 text-sm mt-1">Score: 960.</p></div><span class="font-mono2 text-[10px] px-3 py-1 rounded-full border" style="border-color:var(--line)">INTER</span></div>
+      <div class="grid sm:grid-cols-[110px_1fr_auto] gap-4 py-6 border-b items-start" style="border-color:var(--line)"><span class="font-mono2 text-xs opacity-60">2021 — 2022</span><div><h3 class="font-display font-bold text-xl">Sasi English Medium High School — SSC</h3><p class="opacity-70 text-sm mt-1">Score: 511.</p></div><span class="font-mono2 text-[10px] px-3 py-1 rounded-full border" style="border-color:var(--line)">SCHOOL</span></div>
+      <div class="grid sm:grid-cols-[110px_1fr_auto] gap-4 py-6 border-b items-start" style="border-color:var(--line)"><span class="font-mono2 text-xs opacity-60">FIRST YEAR</span><div><h3 class="font-display font-bold text-xl">🥈 SIH — 2nd Prize + Hackathons + NSS</h3><p class="opacity-70 text-sm mt-1">Won 2nd prize at Smart India Hackathon. Participated in first-year hackathons — practical problem-solving &amp; teamwork. NSS: presented posters on global warming and anti-drug campaigns.</p></div><span class="font-mono2 text-[10px] px-3 py-1 rounded-full" style="background:var(--accent);color:#fff">WINNER</span></div>
+    </div>
+    <div class="flex flex-wrap gap-2 mt-6 font-mono2 text-[10px] tracking-[.15em]">
+      <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">📷 PHOTOGRAPHY</span>
+      <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">🎧 LISTENING TO MUSIC</span>
+      <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">📚 READING BOOKS</span>
+      <span class="px-3 py-1.5 rounded-full border" style="border-color:var(--line)">🌌 WATCHING SKY</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CONTACT (resume-accurate) ═════════ -->
+<section id="contact" class="border-t" style="border-color:var(--line); background:var(--ink); color:var(--paper)">
+  <div class="max-w-[1400px] mx-auto px-5 md:px-10 py-16 md:py-28">
+    <span class="sec-num" style="border-color:rgba(237,232,220,.25)">● 05 — SAY HELLO</span>
+    <h2 class="font-display font-extrabold tracking-tight leading-[.88] text-[16vw] md:text-[9vw] mt-6 rv">LET'S<br/><span class="font-serif-i font-normal">make it</span> <span style="color:#FF4D00">SMART</span><span class="outline-text" style="-webkit-text-stroke-color:var(--paper)">.</span></h2>
+    <div class="grid md:grid-cols-12 gap-10 mt-10">
+      <div class="md:col-span-5 rv">
+        <p class="opacity-70 leading-relaxed">Open to internships, guidance &amp; collaborations. Reach me directly:</p>
+        <a href="mailto:tarunyarlapati26@gmail.com" class="block font-display font-extrabold text-xl md:text-2xl mt-6 u-link w-fit break-all">tarunyarlapati26@gmail.com ↗</a>
+        <a href="tel:+919391866051" class="block font-mono2 text-sm mt-3 opacity-80 u-link w-fit">+91 93918 66051</a>
+        <p class="font-mono2 text-[11px] mt-3 opacity-60 tracking-[.12em]">UNGUTURU, ELURU DIST · AP 534411</p>
+        <div class="flex gap-6 mt-6 font-mono2 text-[11px] tracking-[.18em] opacity-80"><a href="https://www.linkedin.com/in/venkata-naga-durga-tarun-yarlapati-6aaa5a317" target="_blank" rel="noopener" class="u-link">LINKEDIN</a><a href="mailto:tarunyarlapati26@gmail.com" class="u-link">EMAIL</a></div>
+      </div>
+      <form id="cform" class="md:col-span-7 grid sm:grid-cols-2 gap-4 rv rv-d1">
+        <input required placeholder="Your name" class="border rounded-xl px-5 py-4 text-sm col-span-1" style="border-color:rgba(237,232,220,.25)" />
+        <input required type="email" placeholder="Email address" class="border rounded-xl px-5 py-4 text-sm col-span-1" style="border-color:rgba(237,232,220,.25)" />
+        <input placeholder="Subject — e.g. Internship opportunity" class="border rounded-xl px-5 py-4 text-sm sm:col-span-2" style="border-color:rgba(237,232,220,.25)" />
+        <textarea required rows="4" placeholder="Tell me about your project…" class="border rounded-xl px-5 py-4 text-sm sm:col-span-2 resize-none" style="border-color:rgba(237,232,220,.25)"></textarea>
+        <button class="btn-pill sm:col-span-2 rounded-xl py-4 font-mono2 text-xs tracking-[.25em] font-medium" style="background:var(--accent);color:#fff">SEND MESSAGE ↗</button>
+        <p id="csent" class="hidden sm:col-span-2 font-mono2 text-xs tracking-[.15em]" style="color:#4ade80">✓ MESSAGE READY — YOUR MAIL APP SHOULD HAVE OPENED. TALK SOON!</p>
+      </form>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4 mt-16 pt-6 font-mono2 text-[10px] tracking-[.22em] opacity-60" style="border-top:1px solid rgba(237,232,220,.18)">
+      <span>©2026 YARLAPATI V. N. D. TARUN — ALL RIGHTS RESERVED</span>
+      <span class="hidden md:inline">B.TECH · SRI VASAVI ENGINEERING COLLEGE</span>
+      <button id="topBtn" class="btn-pill px-5 py-2.5 rounded-full border" style="border-color:rgba(237,232,220,.3)">BACK TO TOP ↑</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+let n=0; const ln=document.getElementById('loadnum');
+const li=setInterval(()=>{ n+=Math.ceil(Math.random()*9); if(n>=100){n=100;clearInterval(li); setTimeout(()=>document.getElementById('loader').classList.add('done'),350);} ln.textContent=n; },70);
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in');
+  if(e.target.classList.contains('skill')) e.target.querySelector('.fill').style.width=e.target.dataset.lvl+'%';
+}}),{threshold:.15});
+document.querySelectorAll('.rv,.skill').forEach(el=>io.observe(el));
+const cio=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; const el=e.target,end=+el.dataset.n; let s=0;
+  const t=setInterval(()=>{ s+=1; el.textContent=s; if(s>=end){el.textContent=end;clearInterval(t);} },120); cio.unobserve(el); }),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+const roles=['learning machine learning','building in C & Python','solving DSA problems','exploring data analysis','reading & sky-gazing'];
+let ri=0,ci=0,del=false; const ty=document.getElementById('typer');
+(function tick(){ const w=roles[ri]; ty.textContent=w.slice(0,ci); if(!del){ ci++; if(ci>w.length+8){del=true;} } else { ci--; if(ci===0){del=false; ri=(ri+1)%roles.length;} } setTimeout(tick, del?35:70); })();
+setInterval(()=>{ try{ document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Kolkata'})+' IST'; }catch(e){} },1000);
+document.getElementById('themeBtn').onclick=()=>document.documentElement.classList.toggle('dark');
+const mm=document.getElementById('mmenu'); document.getElementById('menuBtn').onclick=()=>mm.classList.toggle('hidden');
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.add('hidden'));
+addEventListener('scroll',()=>{ const h=document.documentElement; document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'; },{passive:true});
+const cur=document.getElementById('cursor'); let mx=0,my=0,cx=0,cy=0;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;}); (function mv(){ cx+=(mx-cx)*.2; cy+=(my-cy)*.2; cur.style.left=cx+'px'; cur.style.top=cy+'px'; requestAnimationFrame(mv); })();
+document.querySelectorAll('a,button,.proj').forEach(el=>{ el.addEventListener('mouseenter',()=>cur.classList.add('big')); el.addEventListener('mouseleave',()=>cur.classList.remove('big')); });
+document.getElementById('cform').addEventListener('submit',e=>{ e.preventDefault(); const f=[...e.target.querySelectorAll('input,textarea')].map(i=>i.value);
+  location.href=`mailto:tarunyarlapati26@gmail.com?subject=${encodeURIComponent(f[2]||'Hello from portfolio')}&body=${encodeURIComponent('From: '+f[0]+' ('+f[1]+')\n\n'+f[3])}`;
+  document.getElementById('csent').classList.remove('hidden'); });
+document.getElementById('topBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
